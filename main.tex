@@ -1,0 +1,44 @@
+\documentclass{article}
+
+\usepackage[fencedCode,inlineFootnotes,citations,definitionLists,hashEnumerators,smartEllipses,pipeTables,tableCaptions,hybrid]{markdown}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[a4paper,margin=1.5cm]{geometry}
+\usepackage{fullpage}
+\usepackage[numbers]{natbib}
+\usepackage{minted}
+
+\setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+
+%% You can re-define how links are rendered: uncomment the following to get hyperlinked text instead of footnotes
+% \usepackage{hyperref}
+%%%begin novalidate
+% \markdownSetup{rendererPrototypes={
+%   link = {\href{#2}{#1}},
+%   image = {\begin{figure}[hbt!]
+%     \centering
+%     \includegraphics{#3}%
+%     \ifx\empty#4\empty\else
+%     \caption{#4}%
+%     \fi
+%     \label{fig:#1}%
+%     \end{figure}}
+% }}
+%%%end novalidate
+
+\title{Deckard: }
+\author{Charles Meyers}
+\date{April 2024}
+
+\begin{document}
+
+\maketitle
+
+
+
+
+\bibliographystyle{plainnat}
+\bibliography{refs}
+
+\end{document}
