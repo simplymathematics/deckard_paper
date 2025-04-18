@@ -43,11 +43,11 @@ Tools like Ray, Optuna, or Sacred offer components of this pipeline (e.g., hyper
 
 # Usage
 Various versions of this software have been used in several published and unpublished works by the author of this paper. 
-The first published work, now reproducible via the `examples/tf2' folder, includes a large survey of attacks and defences against canonical datasets and models[@meyers:2023].
-The second work analysed the run-time requirements of attacks against a particular model before after retraining against those attacks[@meyers:2024a] (reproducible via `examples/security'). 
-The third paper formalised a method for estimating the time-to-failure of a given model against a suite of attacks and introduce a metric that quantifies the ratio of attack and training cost[@meyers:2024b] (reproducible via `examples/pytorch').
-Furthemore, an unpublished work uses this time-to-failure model as a mechanism for analysing the cost efficacy of various hardware choices in the context of adversarial attacks (reproducible via `examples/power').
-A fifth and final work exploits the tooling to train a custom model that is designed to run client-side by using compression algorithms to measure the distance between text (reproducible via `examples/gzip').
+The first published work, now reproducible via the `examples/tf2' folder, includes a large survey of attacks and defences against canonical datasets and models[@meyers2023safety].
+The second work analysed the run-time requirements of attacks against a particular model before after retraining against those attacks[@meyers2024massively] (reproducible via `examples/security'). 
+The third paper formalised a method for estimating the time-to-failure of a given model against a suite of attacks and introduce a metric that quantifies the ratio of attack and training cost[@meyers_aft] (reproducible via `examples/pytorch').
+Furthemore, an unpublished work uses this time-to-failure model as a mechanism for analysing the cost efficacy of various hardware choices in the context of adversarial attacks (reproducible via `examples/power')[@trashfire].
+A fifth and final work exploits the tooling to train a custom model that is designed to run client-side by using compression algorithms to measure the distance between text (reproducible via `examples/gzip'.
 
 
 # Experiment Management
