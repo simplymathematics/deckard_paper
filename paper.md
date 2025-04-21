@@ -69,7 +69,7 @@ The software package presented here provides a machine- and human-readable forma
 In addition, several examples connected to both published and not-yet-published work live in the `examples` folder in the repository, allowing for easy reproducibility of several extensive sets of experiments across several popular ML software frameworks.
 The `power` example provides a reproducible way to run a suite of adversarial tests using popular cloud-based platforms and the `retraining` and `survival_heuristic` examples provide examples of both CPU and GPU-based parallelisation, respectively. 
 
-The `basics` subfolder provides a minimum working example for each of the supported ML frameworks: `tensorflow`[@tensorflow], `pytorch'[@pytorch], `scikit-learn`[@sklearn], and `keras`[@keras]. 
+The `basics` subfolder provides a minimum working example for each of the supported ML frameworks: `tensorflow`[@tensorflow], `pytorch`[@pytorch], `scikit-learn`[@sklearn], and `keras`[@keras]. 
 The basics folder also provides examples of various classes of adversarial examples:
 _poisoning_ attacks that change model behaviour by injecting data during training @[biggio_2013_poisoning], _inference_ attacks [@inference_attack] that attempt to steal the training data, _extraction_ attacks that attempt to reverse engineer the model [@extraction_attack], and _evasion_ attacks that induce errors of classification during run-time [@meyers2023safety].
 The parameters file for each experiment ensures that a given pipeline can be reproduced and the standardised format allows us to derive a hash value that is hard to forge but easy to verify. 
