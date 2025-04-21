@@ -68,11 +68,10 @@ For ML, various regulatory and legal frameworks govern safety [@ai_eu_act;@iso26
 The software package presented here provides a machine- and human-readable format for creating reproducible and auditable experiments as required by various regulations.
 In addition, several examples connected to both published and not-yet-published work live in the `examples` folder in the repository, allowing for easy reproducibility of several extensive sets of experiments across several popular ML software frameworks.
 The `power` example provides a reproducible way to run a suite of adversarial tests using popular cloud-based platforms and the `retraining` and `survival_heuristic` examples provide examples of both CPU and GPU-based parallelisation, respectively. 
-TODO: Set up this folder using test cases that already exist. 
-The `basics` subfolder providers a minimum working example for each of the supported ML frameworks: `tensorflow`[@tensorflow], `pytorch'[@pytorch], `scikit-learn`[@sklearn], and `keras`[@keras]. 
+
+The `basics` subfolder provides a minimum working example for each of the supported ML frameworks: `tensorflow`[@tensorflow], `pytorch'[@pytorch], `scikit-learn`[@sklearn], and `keras`[@keras]. 
 The basics folder also provides examples of various classes of adversarial examples:
 _poisoning_ attacks that change model behaviour by injecting data during training @[biggio_2013_poisoning], _inference_ attacks [@inference_attack] that attempt to steal the training data, _extraction_ attacks that attempt to reverse engineer the model [@extraction_attack], and _evasion_ attacks that induce errors of classification during run-time [@meyers2023safety].
-<!-- TODO: make basics folder using already-existing test cases -->
 The parameters file for each experiment ensures that a given pipeline can be reproduced and the standardised format allows us to derive a hash value that is hard to forge but easy to verify. 
 Not only does this hash serve as an identifier to track the state of an experiment, but also serves as a way to audit the parameters file for tampering. 
 Likewise, by using `dvc`[@dvc] to track any input or output files specified in the parameters file, the software associates each score file with a identifier that is easy to track and verify, but hard to forge-- ensuring that forged or modified results are easy to spot in version-controlled experiment repository. 
