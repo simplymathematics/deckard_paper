@@ -35,9 +35,9 @@ The system is compatible with a variety of ML frameworks and several classes of 
 
 While tools such as `mlflow`[@mlflow], Weights & Biases[@wandb], `optuna`[@optuna], and Kubernetes[@k8s] provide essential infrastructure for model tracking and experiment management, `deckard` occupies a different position in the ML ecosystem---focusing specifically on configurable, adversarially robust experimentation. 
 
-Unlike MLflow and Weights & Biases, which emphasize logging, visualization, and reproducibility for various ML frameworks, deckard enforces reproducibility by construction through its declarative, YAML-driven configuration system built on Facebook's hydra configuration management tool. 
+Unlike MLflow and Weights & Biases, which emphasize logging, visualization, and reproducibility for various ML frameworks, deckard enforces reproducibility by construction through its declarative, YAML-driven configuration system built on Facebook's hydra[@hydra] configuration management tool. 
 In contrast to cloud-management software like Kubernetes ---which is a general-purpose container orchestration platform---`deckard` abstracts away orchestration details and offers native support for parallel and distributed experimentation, tailored to ML workflows involving attack/defense cycles, model retraining, or optimisation.
-While deckard integrates tightly with IBM's Adversarial Robustness Toolbox (`art`), the software is designed to be easily extensible to other attack frameworks.
+While deckard integrates tightly with IBM's Adversarial Robustness Toolbox [@art], the software is designed to be easily extensible to other attack frameworks.
 The human- and machine-readable parameter configuration system allows researchers to declaratively define end-to-end pipelines that span data sampling, preprocessing, model training, attack generation, defense evaluation, multi-objective optimisation, and visualisation.
 Tools like `ray`[@ray], `optuna`[@optuna], or `nevergrad`[@nevergrad] offer components of this pipeline (_e.g._, hyperparameter search or configuration management), but lack unified support for adversarial ML, verification, or auditability at scale. 
 While `deckard` complements these existing tools, and in many cases can be integrated with them, its primary contribution is in automating and verifying adversarial ML experiments in a way that is both extensible and framework-agnostic.
@@ -79,7 +79,7 @@ Likewise, by using `dvc`[@dvc] to track any input or output files specified in t
 
 # Parallel and Distributed Design
 
-Since ML projects can exploit specialized hardware such as multi-core processors or GPUs, and often rely on clusters of machines for large-scale data processing, it was necessary to enable parallel and distributed experiment execution and model optimization. By leveraging the `hydra` configuration framework, `deckard` automatically supports optimization libraries like `nevergrad`[@nevergrad], `ax`[@ax], and `optuna`[@optuna], making the software modular and extensible. Additionally, experiments can be managed using a variety of popular job schedulers, including `Ray`[@ray], `RQ`[@rq], and `slurm`[@slurm] for distributd jobs or `joblib`[@joblib] for jobs on a single machine.
+Since ML projects can exploit specialized hardware such as multi-core processors or GPUs, and often rely on clusters of machines for large-scale data processing, it was necessary to enable parallel and distributed experiment execution and model optimization. By leveraging the `hydra` configuration framework, `deckard` automatically supports optimization libraries like `nevergrad`[@nevergrad], `ax`[@ax], and `optuna`[@optuna], making the software modular and extensible. Additionally, experiments can be managed using a variety of popular job schedulers, including `Ray`[@ray], `Redis Queue`[@rq], and `slurm`[@slurm] for distributd jobs or `joblib`[@joblib] for jobs on a single machine.
 
 By using a declarative design, a given set of experiments can be specified once and executed seamlessly across different backends without modification to the underlying codebase.
 This makes `deckard` both adaptable and scalable, suitable for use on personal laptops, multi-GPU servers, or large-scale HPC clusters. When configured appropriately, experiment batches can be parallelized, enabling massive parameter sweeps, ensemble evaluations, or adversarial robustness tests to be executed in parallel—- reducing turnaround time while maintaining strong guarantees on reproducibility and auditability. 
@@ -97,6 +97,5 @@ The author would like to thank Aaron MacSween, Abel Souza, and Mohammad Saledghp
 their guidance in software design principles. 
 In particular, the author appreciates Mohammad's code and documentation regarding cloud-based and other Kubernetes deployments.
 The author would like to thanks his advisors, Erik Elmroth and Tommy Löfstedt for their patience, funding, and research expertise.
-
 
 # References
