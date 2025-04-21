@@ -2,4 +2,5 @@
 \usepackage{markdown}
 \begin{document}
 \markdownInput{paper.md}
+% This PDF will not render the header or the bibliography propery. However, the markdown is properly rendered into text.
 \end{document}
