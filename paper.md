@@ -13,9 +13,9 @@ authors:
     equal-contrib: true
     affiliation: 1
 affiliations:
- - name: Department of Computing Science, Ume\aa{} University, Ume\aa{}
-   index: 1
-  ror: 05kb8h459
+  - name: Department of Computing Science, Ume\aa{} University, Ume\aa{}
+    index: 1
+    ror: 05kb8h459
 
 date: 15 October 2024
 bibliography: bibliography.bib
