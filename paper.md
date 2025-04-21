@@ -72,7 +72,7 @@ TODO: Set up this folder using test cases that already exist.
 The `basics` subfolder providers a minimum working example for each of the supported ML frameworks: `tensorflow`[@tensorflow], `pytorch'[@pytorch], `scikit-learn`[@sklearn], and `keras`[@keras]. 
 The basics folder also provides examples of various classes of adversarial examples:
 _poisoning_ attacks that change model behaviour by injecting data during training @[biggio_2013_poisoning], _inference_ attacks [@inference_attack] that attempt to steal the training data, _extraction_ attacks that attempt to reverse engineer the model [@extraction_attack], and _evasion_ attacks that induce errors of classification during run-time [@meyers2023safety].
-
+<!-- TODO: make basics folder using already-existing test cases -->
 The parameters file for each experiment ensures that a given pipeline can be reproduced and the standardised format allows us to derive a hash value that is hard to forge but easy to verify. 
 Not only does this hash serve as an identifier to track the state of an experiment, but also serves as a way to audit the parameters file for tampering. 
 Likewise, by using `dvc`[@dvc] to track any input or output files specified in the parameters file, the software associates each score file with a identifier that is easy to track and verify, but hard to forge-- ensuring that forged or modified results are easy to spot in version-controlled experiment repository. 
