@@ -21,6 +21,8 @@ jobs:
       - name: Install system dependencies
         run: |
           sudo apt-get update
+          udo apt-get install -y pandoc texlive-full
+          
 
       - name: Install R packages
         run: |
