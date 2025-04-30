@@ -19,6 +19,9 @@ affiliations:
 
 date: 15 October 2024
 bibliography: bibliography.bib
+output:
+ pdf_document:
+ keep_tex: true
 ---
 
 # Summary
@@ -36,7 +39,7 @@ The system is compatible with a variety of ML frameworks and several classes of 
 
 While tools such as `mlflow` [@mlflow], Weights & Biases [@wandb], `optuna` [@optuna], and Kubernetes [@k8s] provide essential infrastructure for model tracking and experiment management, `deckard` occupies a different position in the ML ecosystem---focusing specifically on configurable, adversarially robust experimentation. 
 
-Unlike MLflow and Weights & Biases, which emphasize logging, visualization, and reproducibility for various ML frameworks, deckard enforces reproducibility by construction through its declarative, YAML-driven configuration system built on Facebook's hydra[@hydra] configuration management tool. 
+Unlike MLflow and Weights & Biases, which emphasize logging, visualization, and reproducibility for various ML frameworks, deckard enforces reproducibility by construction through its declarative, YAML-driven configuration system built on Facebook's hydra [@hydra] configuration management tool. 
 In contrast to cloud-management software like Kubernetes---which is a general-purpose container orchestration platform---`deckard` abstracts away orchestration details and offers native support for parallel and distributed experimentation, tailored to ML workflows involving attack/defense cycles, model retraining, or optimisation.
 While deckard integrates tightly with IBM's Adversarial Robustness Toolbox [@art], the software is designed to be easily extensible to other attack frameworks.
 The human- and machine-readable parameter configuration system allows researchers to declaratively define end-to-end pipelines that span data sampling, preprocessing, model training, attack generation, defense evaluation, multi-objective optimisation, and visualisation.
@@ -47,7 +50,7 @@ While `deckard` complements these existing tools, and in many cases can be integ
 Various versions of this software have been used in several recently published and not-yet-published works by the author of this paper, all of which are available in the `examples` folder in the source code repository [here](https://github.com/simplymathematics/deckard).
 One published work, now reproducible via the `examples/attack_defence_survey` folder, includes a large survey of attacks and defences against canonical datasets and models [@meyers2023safety].
 Another work analysed the run-time requirements of attacks against a particular model before and after retraining against those attacks [@meyers2024massively] (reproducible via `examples/retraining`). 
-The next paper formalised a method for estimating the time-to-failure of a given model against a suite of attacks and introduce a metric that quantifies the ratio of attack and training cost[@meyers_aft] (reproducible via `examples/survival_heuristic`).
+The next paper formalised a method for estimating the time-to-failure of a given model against a suite of attacks and introduce a metric that quantifies the ratio of attack and training cost [@meyers_aft] (reproducible via `examples/survival_heuristic`).
 Furthemore, a not yet published work uses this time-to-failure model as a mechanism for analysing the cost efficacy of various hardware choices in the context of adversarial attacks (reproducible via `examples/power`) [@trashfire].
 Another work exploits the tooling to train a custom model that is designed to run client-side by using compression algorithms to measure the distance between text (reproducible via `examples/compression`).
 
