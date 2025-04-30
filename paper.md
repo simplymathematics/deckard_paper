@@ -24,11 +24,9 @@ output:
  keep_tex: true
 ---
 
-# Summary
+# Summary 
 
 The software package presented, called `deckard`, is a modular software toolkit designed to streamline and standardize experimentation in machine learning (ML) with a particular focuse on the adversarial scenario. It provides a flexible, extensible framework for defining, executing, and analyzing end-to-end ML pipelines in the context of a malicious actor. As it is built on top of the Hydra configuration system, deckard supports declarative YAML-based configuration of data preprocessing, model training, and adversarial attack pipelines, enabling reproducible, framework-agnostic experimentation across diverse ML settings.
-
-TODO: A couple sentences about adversaries. Define them and robustness. Talk about importance as upper bound.
 
 In addition to configuration management, `deckard` includes a suite of utilities for distributed and parallel execution, automated hyperparameter optimisation, visualisation, and result aggregation. The tooling abstracts away much of the engineering overhead typically involved in adversarial ML research, allowing researchers to focus on algorithmic insights rather than implementation details. The presented software facilitates rigorous benchmarking by maintaining an auditable trace of configurations, random seeds, and intermediate outputs throughout the experimental lifecycle.
 
