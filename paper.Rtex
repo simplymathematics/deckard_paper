@@ -1,7 +1,7 @@
 \documentclass{article}
 \usepackage{markdown}
 \begin{document}
-\markdownInput{paper.md}
+\markdownInput{paper.Rmd}
 % This PDF will not render the header or the bibliography propery. However, the markdown is properly rendered into text.
 %  To render paper.pdf from paper.md properly, push to github, wait ~60s and then pull the auto-generated pdf using the overleaf menu in the upper-left corner
 \end{document}
