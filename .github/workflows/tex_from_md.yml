@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - "**.md"
+      - .github/workflows/tex_from_md.yml
   workflow_dispatch:
 
 jobs:
@@ -40,6 +41,6 @@ jobs:
       - name: Commit PDF to repository
         uses: EndBug/add-and-commit@v9
         with:
-          message: '(auto) Paper Tex Draft'
+          message: '(auto) Paper Tex Draft' 
           # This should be the path to the .tex file within your repo.
           add: 'paper.tex'
