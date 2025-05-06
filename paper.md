@@ -1,5 +1,5 @@
 ---
-title: 'Deckard: A Declarative Tool for Machine Learning Robustness Evaluations'
+title: `deckard: A Declarative Tool for Machine Learning Robustness Evaluations'
 tags:
   - Python
   - machine learning
@@ -10,7 +10,7 @@ tags:
 authors:
   - name: Charles Meyers
     orcid: 0000-0002-1277-9811
-    <!-- equal-contrib: true -->
+    equal-contrib: false
     affiliation: 1
 affiliations:
   - name: Department of Computing Science, Ume\aa{} University, Ume\aa{}
