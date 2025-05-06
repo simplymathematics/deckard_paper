@@ -45,7 +45,7 @@ Tools like `ray` [@ray], `optuna` [@optuna], or `nevergrad` [@nevergrad] offer c
 While `deckard` complements these existing tools, and in many cases can be integrated with them, its primary contribution is in automating and verifying adversarial ML experiments in a way that is both extensible and framework-agnostic.
 
 # Usage
-Various versions of this software have been used in several recently published and not-yet-published works by the author of this paper, all of which are available in the `examples` folder in the source code repository [here](https://github.com/simplymathematics/deckard).
+Various versions of this software have been used in several recently published and not-yet-published works by the author of this paper, all of which are available in the `examples` folder in the source code repository [https://github.com/simplymathematics/deckard](https://github.com/simplymathematics/deckard).
 One published work, now reproducible via the `examples/attack_defence_survey` folder, includes a large survey of attacks and defences against canonical datasets and models [@meyers2023safety].
 Another work analysed the run-time requirements of attacks against a particular model before and after retraining against those attacks [@meyers2024massively] (reproducible via `examples/retraining`). 
 The next paper formalised a method for estimating the time-to-failure of a given model against a suite of attacks and introduce a metric that quantifies the ratio of attack and training cost [@meyers_aft] (reproducible via `examples/survival_heuristic`).
@@ -63,7 +63,7 @@ Not only does `deckard` provide a standard way to document and configure these h
 
 # Reproducibility and Auditability
 
-For ML, various regulatory and legal frameworks govern safety [@ai_eu_act;@iso26262;@IEC61508;@IEC62034], privacy [@ai_eu_act;@gdpr;@hipaa;@coppa;] and/or transparency [@ai_eu_act;@ai_pipeline_regulation].
+For ML, various regulatory and legal frameworks govern safety [@ai_eu_act;@iso26262;@IEC61508;@IEC62034], privacy [@ai_eu_act;@gdpr;@hipaa;@coppa] and/or transparency [@ai_eu_act;@ai_pipeline_regulation].
 The software package presented here provides a machine- and human-readable format for creating reproducible and auditable experiments as required by various regulations.
 In addition, several examples connected to both published and not-yet-published work live in the `examples` folder in the repository, allowing for easy reproducibility of several extensive sets of experiments across several popular ML software frameworks.
 The `power` example provides a reproducible way to run a suite of adversarial tests using popular cloud-based platforms and the `retraining` and `survival_heuristic` examples provide examples of both CPU and GPU-based parallelisation, respectively. 
