@@ -169,18 +169,17 @@ experiments in a way that is both extensible and framework-agnostic.
 Various versions of this software have been used in several recently
 published and not-yet-published works by the author of this paper, all
 of which are available in the \texttt{examples} folder in the source
-code repository
-\href{https://github.com/simplymathematics/deckard}{here}. One published
-work, now reproducible via the \texttt{examples/attack\_defence\_survey}
-folder, includes a large survey of attacks and defences against
-canonical datasets and models (C. Meyers, Löfstedt, and Elmroth 2023).
-Another work analysed the run-time requirements of attacks against a
-particular model before and after retraining against those attacks (C.
-Meyers, Löfstedt, and Elmroth 2024) (reproducible via
-\texttt{examples/retraining}). The next paper formalised a method for
-estimating the time-to-failure of a given model against a suite of
-attacks and introduce a metric that quantifies the ratio of attack and
-training cost (Meyers et al. 2023) (reproducible via
+code repository \url{https://github.com/simplymathematics/deckard}. One
+published work, now reproducible via the
+\texttt{examples/attack\_defence\_survey} folder, includes a large
+survey of attacks and defences against canonical datasets and models (C.
+Meyers, Löfstedt, and Elmroth 2023). Another work analysed the run-time
+requirements of attacks against a particular model before and after
+retraining against those attacks (C. Meyers, Löfstedt, and Elmroth 2024)
+(reproducible via \texttt{examples/retraining}). The next paper
+formalised a method for estimating the time-to-failure of a given model
+against a suite of attacks and introduce a metric that quantifies the
+ratio of attack and training cost (Meyers et al. 2023) (reproducible via
 \texttt{examples/survival\_heuristic}). Furthemore, a not yet published
 work uses this time-to-failure model as a mechanism for analysing the
 cost efficacy of various hardware choices in the context of adversarial
@@ -221,21 +220,21 @@ For ML, various regulatory and legal frameworks govern safety (The
 Parliament of the European Union 2024; {``{ISO} 26262-1:2011, Road
 Vehicles --- Functional Safety''} 2018; \emph{IEC 61508 Safety and
 Functional Safety} 2010; \emph{IEC 62304 Medical Device Software -
-Software Life Cycle Processes} 2006), privacy {[}The Parliament of the
-European Union (2024);European Parliament and Council of the European
-Union (2016);Legislature of the United States (1996);Legislature of the
-United States (1998);{]} and/or transparency (The Parliament of the
-European Union 2024; The Legislature of California 2024). The software
-package presented here provides a machine- and human-readable format for
-creating reproducible and auditable experiments as required by various
-regulations. In addition, several examples connected to both published
-and not-yet-published work live in the \texttt{examples} folder in the
-repository, allowing for easy reproducibility of several extensive sets
-of experiments across several popular ML software frameworks. The
-\texttt{power} example provides a reproducible way to run a suite of
-adversarial tests using popular cloud-based platforms and the
-\texttt{retraining} and \texttt{survival\_heuristic} examples provide
-examples of both CPU and GPU-based parallelisation, respectively.
+Software Life Cycle Processes} 2006), privacy (The Parliament of the
+European Union 2024; European Parliament and Council of the European
+Union 2016; Legislature of the United States 1996, 1998) and/or
+transparency (The Parliament of the European Union 2024; The Legislature
+of California 2024). The software package presented here provides a
+machine- and human-readable format for creating reproducible and
+auditable experiments as required by various regulations. In addition,
+several examples connected to both published and not-yet-published work
+live in the \texttt{examples} folder in the repository, allowing for
+easy reproducibility of several extensive sets of experiments across
+several popular ML software frameworks. The \texttt{power} example
+provides a reproducible way to run a suite of adversarial tests using
+popular cloud-based platforms and the \texttt{retraining} and
+\texttt{survival\_heuristic} examples provide examples of both CPU and
+GPU-based parallelisation, respectively.
 
 The \texttt{basics} subfolder provides a minimum working example for
 each of the supported ML frameworks: \texttt{tensorflow} (Abadi et al.
