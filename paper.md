@@ -1,5 +1,5 @@
 ---
-title: `deckard: A Declarative Tool for Machine Learning Robustness Evaluations'
+title: deckard: A Declarative Tool for Machine Learning Robustness Evaluations
 tags:
   - Python
   - machine learning
