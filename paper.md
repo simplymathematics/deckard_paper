@@ -16,7 +16,7 @@ affiliations:
     index: 1
     ror: 05kb8h459
 
-date: 15 October 2024
+date: 15 April 2025
 bibliography: bibliography.bib
 output:
  pdf_document:
