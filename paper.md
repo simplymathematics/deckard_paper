@@ -10,7 +10,6 @@ tags:
 authors:
   - name: Charles Meyers
     orcid: 0000-0002-1277-9811
-    equal-contrib: false
     affiliation: 1
 affiliations:
   - name: Department of Computing Science, Ume\aa{} University, Ume\aa{}
