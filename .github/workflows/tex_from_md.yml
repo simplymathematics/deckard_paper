@@ -34,12 +34,9 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: rendered-pdf-and-tex
-          path: |
-            paper.tex
+          path: paper.tex paper.pdf
       - name: Commit PDF to repository
         uses: EndBug/add-and-commit@v9
         with:
-          add: |
-          'paper.tex'
-          'paper.pdf'
+          add: 'paper.tex' 'paper.pdf'
     
