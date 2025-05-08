@@ -121,7 +121,7 @@ trace of configurations, random seeds, and intermediate outputs
 throughout the experimental lifecycle.
 
 The system is compatible with a variety of ML frameworks and several
-classes of adversarial attacks, making it a suitable backend for both
+classes of adversarial attacks, making it a suitable back-end for both
 large-scale automated testing and fine-grained empirical analysis. By
 providing a unified interface for experimental control, \texttt{deckard}
 accelerates the development and evaluation of robust models, and helps
@@ -180,7 +180,7 @@ retraining against those attacks (Charles Meyers and Elmroth 2024)
 formalised a method for estimating the time-to-failure of a given model
 against a suite of attacks and introduce a metric that quantifies the
 ratio of attack and training cost (Meyers et al. 2023) (reproducible via
-\texttt{examples/survival\_heuristic}). Furthemore, a not yet published
+\texttt{examples/survival\_heuristic}). Furthermore, a not yet published
 work uses this time-to-failure model as a mechanism for analysing the
 cost efficacy of various hardware choices in the context of adversarial
 attacks (reproducible via \texttt{examples/power}) (C. Meyers et al.
@@ -196,8 +196,8 @@ Typically ML projects are composed of long and complex pipelines that
 are highly dependent on a number of parameters that must be configured
 by either the model builder or attacker. Due to the large scale and cost
 associated with training ML models, it is often necessary to tune a
-model using many indivudal model configurations (often called
-\emph{hyper-paremeters}). To determine adversarial robustness, one of
+model using many individual model configurations (often called
+\emph{hyper-parameters}). To determine adversarial robustness, one of
 many benchmark datasets is first sampled, then preprocessed, sent to a
 model, with optional pre- and post-processing defences, and then scored
 according to some chosen metric which may include the performance
@@ -274,7 +274,7 @@ automatically supports optimization libraries like \texttt{nevergrad}
 modular and extensible. Additionally, experiments can be managed using a
 variety of popular job schedulers, including \texttt{Ray} (Moritz et al.
 2018), \texttt{Redis\ Queue} (Stamps 2025), and \texttt{slurm} (Yoo,
-Jette, and Grondona 2003) for distributd jobs or \texttt{joblib} (J.
+Jette, and Grondona 2003) for distributd jobs or \texttt{joblib} (Joblib
 Developers 2025) for jobs on a single machine.
 
 By using a declarative design, a given set of experiments can be

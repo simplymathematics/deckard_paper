@@ -54,7 +54,7 @@ Another work exploits the tooling to train a custom model that is designed to ru
 
 # Experiment Management
 Typically ML projects are composed of long and complex pipelines that are highly dependent on a number of parameters that must be configured by either the model builder or attacker. 
-Due to the large scale and cost associated with training ML models, it is often necessary to tune a model using many indivudal model configurations (often called _hyper-paremeters_).
+Due to the large scale and cost associated with training ML models, it is often necessary to tune a model using many indivudal model configurations (often called _hyper-parameters_).
 To determine adversarial robustness, one of many benchmark datasets is first sampled, then preprocessed, sent to a model, with optional pre- and post-processing defences, and then scored according to some chosen metric which may include the performance against any number of adversarial attacks.
 Each stage in this example pipeline might include tens or hundreds of possible sets of hyper-parameters that must be exhaustively tested.
 Furthermore, this problem scales drastically as we include more and more stages in a pipeline since each additional stage introduces a new combinatorial layer of complexity, rapidly expanding the total number of potential configurations that must be evaluated for robustness and be reproducible for posterity.
