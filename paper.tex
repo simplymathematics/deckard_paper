@@ -175,7 +175,7 @@ published work, now reproducible via the
 survey of attacks and defences against canonical datasets and models (C.
 Meyers, Löfstedt, and Elmroth 2023). Another work analysed the run-time
 requirements of attacks against a particular model before and after
-retraining against those attacks (Charles Meyers and Elmroth 2024)
+retraining against those attacks (Charles Meyers et al. 2024)
 (reproducible via \texttt{examples/retraining}). The next paper
 formalised a method for estimating the time-to-failure of a given model
 against a suite of attacks and introduce a metric that quantifies the
@@ -274,11 +274,11 @@ automatically supports optimization libraries like \texttt{nevergrad}
 modular and extensible. Additionally, experiments can be managed using a
 variety of popular job schedulers, including \texttt{Ray} (Moritz et al.
 2018), \texttt{Redis\ Queue} (Stamps 2025), and \texttt{slurm} (Yoo,
-Jette, and Grondona 2003) for distributd jobs or \texttt{joblib} (Joblib
+Jette, and Grondona 2003) for distributed jobs or \texttt{joblib} (Joblib
 Developers 2025) for jobs on a single machine.
 
 By using a declarative design, a given set of experiments can be
-specified once and executed seamlessly across different backends without
+specified once and executed seamlessly across different back-ends without
 modification to the underlying codebase. This makes \texttt{deckard}
 both adaptable and scalable, suitable for use on personal laptops,
 multi-node servers, or large-scale, high-performance clusters. When
