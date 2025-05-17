@@ -1,0 +1,86 @@
+schema: '2.0'
+stages:
+  pre-commmit:
+    cmd: pre-commit run --all-files  && chktex -q -V paper.tex -n 24 -n 8 -n 1 -n
+      13 -n 45 -n 36 && touch pre_commit.flag
+    deps:
+    - path: .pre-commit-config.yaml
+      md5: 4798415da4da19ce2c319fb8bc774a65
+      size: 1191
+    - path: arxiv.py
+      md5: 320bb654191325bd5654a90fefd522ce
+      size: 7839
+    - path: bibliography.bib
+      md5: d3091f03af17da199bb34f7e5018e4d2
+      size: 183172
+    - path: paper.tex
+      md5: 47ba50967b2a47b2deb1675ca6fc0702
+      size: 23003
+    outs:
+    - path: pre_commit.flag
+      md5: d41d8cd98f00b204e9800998ecf8427e
+      size: 0
+      isexec: true
+  first_run:
+    cmd: pdflatex  paper.tex
+    deps:
+    - path: .pre-commit-config.yaml
+      md5: 4798415da4da19ce2c319fb8bc774a65
+      size: 1191
+    - path: arxiv.py
+      md5: 320bb654191325bd5654a90fefd522ce
+      size: 7839
+    - path: bibliography.bib
+      md5: d3091f03af17da199bb34f7e5018e4d2
+      size: 183172
+    - path: paper.tex
+      md5: 47ba50967b2a47b2deb1675ca6fc0702
+      size: 23003
+    - path: pre_commit.flag
+      md5: d41d8cd98f00b204e9800998ecf8427e
+      size: 0
+    outs:
+    - path: paper.aux
+      md5: 297486e1c396b94db0c4bcf4fba2ea6a
+      size: 4418
+    - path: paper.log
+      md5: f46d47d4dc1bfd1b665af48fe7c17b2c
+      size: 24442
+  big_run:
+    cmd: pdflatex  paper.tex && pdflatex  paper.tex
+    deps:
+    - path: bibliography.bib
+      md5: d3091f03af17da199bb34f7e5018e4d2
+      size: 183172
+    - path: paper.aux
+      md5: 297486e1c396b94db0c4bcf4fba2ea6a
+      size: 4418
+      isexec: true
+    - path: paper.log
+      md5: ce48baff400e8830d0dba35a6e1f7851
+      size: 24357
+      isexec: true
+    - path: paper.tex
+      md5: 47ba50967b2a47b2deb1675ca6fc0702
+      size: 23003
+    outs:
+    - path: paper.pdf
+      md5: d22ce270370758eaff3079d8a514dc50
+      size: 190179
+      isexec: true
+  arxiv:
+    cmd: python arxiv.py  --title "deckard- A Declarative Tool for Machine Learning
+      Robustness Evaluations"  --directories  --extensions py yaml lock log csv  --delete_these_files
+      "paper.aux" "paper.pdf"
+    deps:
+    - path: arxiv.py
+      md5: 320bb654191325bd5654a90fefd522ce
+      size: 7839
+    - path: paper.pdf
+      md5: d22ce270370758eaff3079d8a514dc50
+      size: 190179
+    outs:
+    - path: deckard- A Declarative Tool for Machine Learning Robustness Evaluations.zip
+      md5: f3664477bf5148468fbca4fc67ca140d
+      size: 71755
+      isexec: true

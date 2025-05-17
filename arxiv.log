@@ -1,0 +1,101 @@
+2025-05-17 00:23:40,754 - INFO - Temporary directory: /tmp/tmpeb2qy2u0
+2025-05-17 00:23:40,755 - INFO - Creating temporary directory: /tmp/tmpeb2qy2u0
+2025-05-17 00:23:40,755 - INFO - Copying files to temporary directory: /tmp/tmpeb2qy2u0
+2025-05-17 00:23:42,490 - INFO - Flattening directories
+2025-05-17 00:23:42,491 - ERROR - images does not exist.
+2025-05-17 00:25:20,243 - INFO - Temporary directory: /tmp/tmpv1kdnsrp
+2025-05-17 00:25:20,243 - INFO - Creating temporary directory: /tmp/tmpv1kdnsrp
+2025-05-17 00:25:20,244 - INFO - Copying files to temporary directory: /tmp/tmpv1kdnsrp
+2025-05-17 00:25:21,603 - INFO - Removing git directories
+2025-05-17 00:25:21,604 - INFO - .git is a directory.
+2025-05-17 00:25:21,610 - INFO - .github is a directory.
+2025-05-17 00:25:21,611 - INFO - .gitignore not in use - deleting.
+2025-05-17 00:25:21,611 - INFO - Deleting files with extension: py
+2025-05-17 00:25:21,612 - INFO - arxiv.py not in use - deleting.
+2025-05-17 00:25:21,612 - INFO - Deleting files with extension: yaml
+2025-05-17 00:25:21,613 - INFO - dvc.yaml not in use - deleting.
+2025-05-17 00:25:21,613 - INFO - .pre-commit-config.yaml not in use - deleting.
+2025-05-17 00:25:21,614 - INFO - Deleting files with extension: lock
+2025-05-17 00:25:21,614 - INFO - dvc.lock not in use - deleting.
+2025-05-17 00:25:21,614 - INFO - Deleting files with extension: log
+2025-05-17 00:25:21,615 - INFO - paper.log not in use - deleting.
+2025-05-17 00:25:21,615 - INFO - arxiv.log not in use - deleting.
+2025-05-17 00:25:21,616 - INFO - Deleting files with extension: csv
+2025-05-17 00:25:21,616 - INFO - Deleting these directories: ['old_images', 'template']
+2025-05-17 00:25:57,159 - INFO - Temporary directory: /tmp/tmps7lwq2x9
+2025-05-17 00:25:57,160 - INFO - Creating temporary directory: /tmp/tmps7lwq2x9
+2025-05-17 00:25:57,160 - INFO - Copying files to temporary directory: /tmp/tmps7lwq2x9
+2025-05-17 00:25:58,468 - INFO - Removing git directories
+2025-05-17 00:25:58,469 - INFO - .git is a directory.
+2025-05-17 00:25:58,475 - INFO - .github is a directory.
+2025-05-17 00:25:58,476 - INFO - .gitignore not in use - deleting.
+2025-05-17 00:25:58,476 - INFO - Deleting files with extension: py
+2025-05-17 00:25:58,477 - INFO - arxiv.py not in use - deleting.
+2025-05-17 00:25:58,477 - INFO - Deleting files with extension: yaml
+2025-05-17 00:25:58,478 - INFO - dvc.yaml not in use - deleting.
+2025-05-17 00:25:58,479 - INFO - .pre-commit-config.yaml not in use - deleting.
+2025-05-17 00:25:58,479 - INFO - Deleting files with extension: lock
+2025-05-17 00:25:58,480 - INFO - dvc.lock not in use - deleting.
+2025-05-17 00:25:58,480 - INFO - Deleting files with extension: log
+2025-05-17 00:25:58,481 - INFO - paper.log not in use - deleting.
+2025-05-17 00:25:58,482 - INFO - arxiv.log not in use - deleting.
+2025-05-17 00:25:58,482 - INFO - Deleting files with extension: csv
+2025-05-17 00:25:58,483 - INFO - Deleting these directories: ['old_images', 'template']
+2025-05-17 00:26:19,794 - INFO - Temporary directory: /tmp/tmpdih5ebf4
+2025-05-17 00:26:19,795 - INFO - Creating temporary directory: /tmp/tmpdih5ebf4
+2025-05-17 00:26:19,795 - INFO - Copying files to temporary directory: /tmp/tmpdih5ebf4
+2025-05-17 00:26:21,012 - INFO - Removing git directories
+2025-05-17 00:26:21,012 - INFO - .git is a directory.
+2025-05-17 00:26:21,019 - INFO - .github is a directory.
+2025-05-17 00:26:21,020 - INFO - .gitignore not in use - deleting.
+2025-05-17 00:26:21,020 - INFO - Deleting files with extension: py
+2025-05-17 00:26:21,021 - INFO - arxiv.py not in use - deleting.
+2025-05-17 00:26:21,022 - INFO - Deleting files with extension: yaml
+2025-05-17 00:26:21,022 - INFO - dvc.yaml not in use - deleting.
+2025-05-17 00:26:21,023 - INFO - .pre-commit-config.yaml not in use - deleting.
+2025-05-17 00:26:21,023 - INFO - Deleting files with extension: lock
+2025-05-17 00:26:21,024 - INFO - dvc.lock not in use - deleting.
+2025-05-17 00:26:21,024 - INFO - Deleting files with extension: log
+2025-05-17 00:26:21,025 - INFO - paper.log not in use - deleting.
+2025-05-17 00:26:21,025 - INFO - arxiv.log not in use - deleting.
+2025-05-17 00:26:21,026 - INFO - Deleting files with extension: csv
+2025-05-17 00:26:21,026 - INFO - Deleting these directories: None
+2025-05-17 00:27:39,114 - INFO - Temporary directory: /tmp/tmp9evsgnob
+2025-05-17 00:27:39,114 - INFO - Creating temporary directory: /tmp/tmp9evsgnob
+2025-05-17 00:27:39,115 - INFO - Copying files to temporary directory: /tmp/tmp9evsgnob
+2025-05-17 00:27:40,411 - INFO - Removing git directories
+2025-05-17 00:27:40,411 - INFO - .git is a directory.
+2025-05-17 00:27:40,417 - INFO - .github is a directory.
+2025-05-17 00:27:40,418 - INFO - .gitignore not in use - deleting.
+2025-05-17 00:27:40,418 - INFO - Deleting files with extension: py
+2025-05-17 00:27:40,419 - INFO - arxiv.py not in use - deleting.
+2025-05-17 00:27:40,419 - INFO - Deleting files with extension: yaml
+2025-05-17 00:27:40,420 - INFO - dvc.yaml not in use - deleting.
+2025-05-17 00:27:40,420 - INFO - .pre-commit-config.yaml not in use - deleting.
+2025-05-17 00:27:40,421 - INFO - Deleting files with extension: lock
+2025-05-17 00:27:40,421 - INFO - dvc.lock not in use - deleting.
+2025-05-17 00:27:40,421 - INFO - Deleting files with extension: log
+2025-05-17 00:27:40,422 - INFO - paper.log not in use - deleting.
+2025-05-17 00:27:40,422 - INFO - arxiv.log not in use - deleting.
+2025-05-17 00:27:40,422 - INFO - Deleting files with extension: csv
+2025-05-17 00:27:40,423 - INFO - Deleting these files:['paper.aux', 'paper.log', 'paper.pdf']
+2025-05-17 00:27:57,050 - INFO - Temporary directory: /tmp/tmpgvuj3jni
+2025-05-17 00:27:57,051 - INFO - Creating temporary directory: /tmp/tmpgvuj3jni
+2025-05-17 00:27:57,052 - INFO - Copying files to temporary directory: /tmp/tmpgvuj3jni
+2025-05-17 00:27:58,322 - INFO - Removing git directories
+2025-05-17 00:27:58,322 - INFO - .git is a directory.
+2025-05-17 00:27:58,328 - INFO - .github is a directory.
+2025-05-17 00:27:58,329 - INFO - .gitignore not in use - deleting.
+2025-05-17 00:27:58,329 - INFO - Deleting files with extension: py
+2025-05-17 00:27:58,330 - INFO - arxiv.py not in use - deleting.
+2025-05-17 00:27:58,331 - INFO - Deleting files with extension: yaml
+2025-05-17 00:27:58,331 - INFO - dvc.yaml not in use - deleting.
+2025-05-17 00:27:58,332 - INFO - .pre-commit-config.yaml not in use - deleting.
+2025-05-17 00:27:58,332 - INFO - Deleting files with extension: lock
+2025-05-17 00:27:58,333 - INFO - dvc.lock not in use - deleting.
+2025-05-17 00:27:58,333 - INFO - Deleting files with extension: log
+2025-05-17 00:27:58,334 - INFO - paper.log not in use - deleting.
+2025-05-17 00:27:58,334 - INFO - arxiv.log not in use - deleting.
+2025-05-17 00:27:58,335 - INFO - Deleting files with extension: csv
+2025-05-17 00:27:58,335 - INFO - Deleting these files:['paper.aux', 'paper.pdf']
+2025-05-17 00:27:58,336 - INFO - Zipping temporary directory: /tmp/tmpgvuj3jni

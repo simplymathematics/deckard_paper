@@ -1,0 +1,42 @@
+stages:
+  pre-commmit:
+    cmd: pre-commit run --all-files  && chktex -q -V paper.tex -n 24 -n 8 -n 1 -n 13 -n 45 -n 36 && touch pre_commit.flag # Suppresses warnings 8 (dash length), 24 (\labels inside floats), and 1 (trailing whitespace following and command)
+    deps:
+      - .pre-commit-config.yaml
+      - paper.tex
+      - arxiv.py
+      - bibliography.bib
+    outs:
+      - pre_commit.flag
+  first_run:
+    cmd: pdflatex  paper.tex
+    deps:
+      - .pre-commit-config.yaml
+      - paper.tex
+      - arxiv.py
+      - bibliography.bib
+      - pre_commit.flag
+    outs:
+      - paper.aux
+      - paper.log
+  big_run:
+    cmd: pdflatex  paper.tex && pdflatex  paper.tex 
+    deps:
+      - paper.tex
+      - bibliography.bib
+      - paper.aux
+      - paper.log
+    outs:
+      - paper.pdf
+  arxiv:
+    cmd: >-
+      python arxiv.py 
+      --title "deckard- A Declarative Tool for Machine Learning Robustness Evaluations" 
+      --directories 
+      --extensions py yaml lock log csv 
+      --delete_these_files "paper.aux" "paper.pdf"
+    deps:
+      - arxiv.py
+      - paper.pdf
+    outs:
+      - "deckard- A Declarative Tool for Machine Learning Robustness Evaluations.zip"
