@@ -44,7 +44,7 @@ stages:
       md5: 297486e1c396b94db0c4bcf4fba2ea6a
       size: 4418
     - path: paper.log
-      md5: f46d47d4dc1bfd1b665af48fe7c17b2c
+      md5: e2c77545d51b568ce1ba8e72985dabb0
       size: 24442
   big_run:
     cmd: pdflatex  paper.tex && pdflatex  paper.tex
@@ -57,7 +57,7 @@ stages:
       size: 4418
       isexec: true
     - path: paper.log
-      md5: ce48baff400e8830d0dba35a6e1f7851
+      md5: 25fa20398762cffc4235c15d9c4c87c7
       size: 24357
       isexec: true
     - path: paper.tex
@@ -65,7 +65,7 @@ stages:
       size: 23003
     outs:
     - path: paper.pdf
-      md5: d22ce270370758eaff3079d8a514dc50
+      md5: 8015a1e16f3651f6af37decc438b9ebe
       size: 190179
       isexec: true
   arxiv:
@@ -77,10 +77,10 @@ stages:
       md5: 320bb654191325bd5654a90fefd522ce
       size: 7839
     - path: paper.pdf
-      md5: d22ce270370758eaff3079d8a514dc50
+      md5: 8015a1e16f3651f6af37decc438b9ebe
       size: 190179
     outs:
     - path: deckard- A Declarative Tool for Machine Learning Robustness Evaluations.zip
-      md5: f3664477bf5148468fbca4fc67ca140d
-      size: 71755
+      md5: 487d17b15ae2a634830946ed46cfd390
+      size: 71961
       isexec: true

@@ -27,7 +27,8 @@ stages:
       - paper.aux
       - paper.log
     outs:
-      - paper.pdf
+      - paper.pdf:
+          cache: false
   arxiv:
     cmd: >-
       python arxiv.py 
