@@ -14,8 +14,8 @@ stages:
       md5: d3091f03af17da199bb34f7e5018e4d2
       size: 183172
     - path: paper.tex
-      md5: 47ba50967b2a47b2deb1675ca6fc0702
-      size: 23003
+      md5: 02c159b24b06062e72b7e66e357a7faf
+      size: 23002
     outs:
     - path: pre_commit.flag
       md5: d41d8cd98f00b204e9800998ecf8427e
@@ -34,8 +34,8 @@ stages:
       md5: d3091f03af17da199bb34f7e5018e4d2
       size: 183172
     - path: paper.tex
-      md5: 47ba50967b2a47b2deb1675ca6fc0702
-      size: 23003
+      md5: 02c159b24b06062e72b7e66e357a7faf
+      size: 23002
     - path: pre_commit.flag
       md5: d41d8cd98f00b204e9800998ecf8427e
       size: 0
@@ -44,7 +44,7 @@ stages:
       md5: 297486e1c396b94db0c4bcf4fba2ea6a
       size: 4418
     - path: paper.log
-      md5: e2c77545d51b568ce1ba8e72985dabb0
+      md5: 5cf2a7a967854a5d03e1259d9f01a3ea
       size: 24442
   big_run:
     cmd: pdflatex  paper.tex && pdflatex  paper.tex
@@ -57,16 +57,16 @@ stages:
       size: 4418
       isexec: true
     - path: paper.log
-      md5: 25fa20398762cffc4235c15d9c4c87c7
+      md5: 6bad69cc867da060d6dce7edaaea4f5c
       size: 24357
       isexec: true
     - path: paper.tex
-      md5: 47ba50967b2a47b2deb1675ca6fc0702
-      size: 23003
+      md5: 02c159b24b06062e72b7e66e357a7faf
+      size: 23002
     outs:
     - path: paper.pdf
-      md5: 8015a1e16f3651f6af37decc438b9ebe
-      size: 190179
+      md5: a0835fd40a98a77caefb8a34c1a8e65b
+      size: 190188
       isexec: true
   arxiv:
     cmd: python arxiv.py  --title "deckard- A Declarative Tool for Machine Learning
@@ -77,10 +77,10 @@ stages:
       md5: 320bb654191325bd5654a90fefd522ce
       size: 7839
     - path: paper.pdf
-      md5: 8015a1e16f3651f6af37decc438b9ebe
-      size: 190179
+      md5: a0835fd40a98a77caefb8a34c1a8e65b
+      size: 190188
     outs:
     - path: deckard- A Declarative Tool for Machine Learning Robustness Evaluations.zip
-      md5: 487d17b15ae2a634830946ed46cfd390
-      size: 71961
+      md5: e95d50f0db501ff26ea9d5a9704852b8
+      size: 71958
       isexec: true
