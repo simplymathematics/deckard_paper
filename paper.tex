@@ -99,197 +99,90 @@ Evaluations}
 \hypertarget{summary}{%
 \section{Summary}\label{summary}}
 
-The software package presented, called \texttt{deckard}, is a modular
-software toolkit designed to streamline and standardize experimentation
-in machine learning (ML) with a particular focus on the adversarial
-scenario. It provides a flexible, extensible framework for defining,
-executing, and analysing end-to-end ML pipelines in the context of a
-malicious actor. As it is built on top of the Hydra configuration
-system, deckard supports declarative YAML-based configuration of data
-preprocessing, model training, and adversarial attack pipelines,
-enabling reproducible, framework-agnostic experimentation across diverse
-ML settings.
+The software package presented, called \texttt{deckard}, is a modular toolkit that streamlines and standardizes machine learning (ML) experimentation, with a particular emphasis on evaluating models under worst-case perturbations (Madry 2018). 
+It offers a flexible, extensible framework for defining, running, and analysing end-to-end ML pipelines in settings where inputs may be manipulated by an attacker or corrupted by unexpected noise (Biggion 2013).
 
-In addition to configuration management, \texttt{deckard} includes a
-suite of utilities for distributed and parallel execution, automated
-hyperparameter optimisation, visualisation, and result aggregation. The
-tooling abstracts away much of the engineering overhead typically
-involved in adversarial ML research, allowing researchers to focus on
-algorithmic insights rather than implementation details. The presented
-software facilitates rigorous benchmarking by maintaining an auditable
-trace of configurations, random seeds, and intermediate outputs
-throughout the experimental lifecycle.
+Built on the Hydra configuration system (Yadan 2019), \texttt{deckard} supports declarative YAML-based configuration for data preprocessing, model training, and adversarial attack pipelines. 
+This makes it easy to run reproducible, framework-agnostic experiments across a wide range of ML domains.
 
-The system is compatible with a variety of ML frameworks and several
-classes of adversarial attacks, making it a suitable backend for both
-large-scale automated testing and fine-grained empirical analysis. By
-providing a unified interface for experimental control, \texttt{deckard}
-accelerates the development and evaluation of robust models, and helps
-close the gap between research prototypes and verifiable, reproducible
-results.
+Beyond configuration management, \texttt{deckard} provides tools for distributed and parallel execution, automated hyperparameter optimization, visualization, and result aggregation. 
+By handling much of the engineering overhead common in adversarial ML research, it lets researchers focus on developing ideas rather than juggling infrastructure. 
+The system also ensures rigorous benchmarking by keeping an auditable record of configurations, seeds, and intermediate outputs throughout each experiment.
+
+Compatible with multiple ML frameworks and a variety of attack methods, \texttt{deckard} works both as a backend for large-scale automated testing and as a platform for detailed empirical analysis. 
+With its unified interface for experiment control, the toolkit accelerates the development of robust models and helps bridge the gap between exploratory research and reproducible, trustworthy results .
+
+To avoid any ambiguity about contributions, we clarify that \texttt{deckard} is a method and software system introduced in this work. 
+Although the implementation is publicly available on GitHub, the modular design, configuration-driven framework, and experimental methodology are original to this paper. 
+While the prior works outlined in the Usage Section can be fully reproduced with this software, this paper is the first to present the system as a cohesive method, fully specified, documented, and intended for broad reuse.
 
 \hypertarget{statement-of-need}{%
 \section{Statement of need}\label{statement-of-need}}
 
-While tools such as \texttt{mlflow} (Zaharia et al. 2018), Weights \&
-Biases (Biewald 2020), \texttt{optuna} (Akiba et al. 2019), and
-Kubernetes (Kubernetes 2019) provide essential infrastructure for model
-tracking and experiment management, \texttt{deckard} occupies a
-different position in the ML ecosystem---focusing specifically on
+While tools such as \texttt{mlflow} (Zaharia et al. 2018), Weights \& Biases (Biewald 2020), \texttt{optuna} (Akiba et al. 2019), and
+Kubernetes (Kubernetes 2019) provide essential infrastructure for model tracking and experiment management, \texttt{deckard} occupies a different position in the ML ecosystem---focusing specifically on
 configurable, adversarially robust experimentation.
 
-Unlike MLflow and Weights \& Biases, which emphasize logging,
-visualization, and reproducibility for various ML frameworks, deckard
-enforces reproducibility by construction through its declarative,
-YAML-driven configuration system built on Facebook's hydra (Yadan 2019)
-configuration management tool. In contrast to cloud-management software
-like Kubernetes---which is a general-purpose container orchestration
-platform---\texttt{deckard} abstracts away orchestration details and
-offers native support for parallel and distributed experimentation,
-tailored to ML workflows involving attack/defense cycles, model
-retraining, or optimisation. While deckard integrates tightly with IBM's
-Adversarial Robustness Toolbox (Nicolae et al. 2018), the software is
-designed to be easily extensible to other attack frameworks. The human-
-and machine-readable parameter configuration system allows researchers
-to declaratively define end-to-end pipelines that span data sampling,
-preprocessing, model training, attack generation, defense evaluation,
-multi-objective optimisation, and visualisation. Tools like \texttt{ray}
-(Moritz et al. 2018), \texttt{optuna} (Akiba et al. 2019), or
-\texttt{nevergrad} (Bennet et al. 2021) offer components of this
-pipeline (\emph{e.g.}, hyperparameter search or configuration
-management), but lack unified support for adversarial ML, verification,
-or auditability at scale. While \texttt{deckard} complements these
-existing tools, and in many cases can be integrated with them, its
-primary contribution is in automating and verifying adversarial ML
-experiments in a way that is both extensible and framework-agnostic.
+Unlike MLflow and Weights \& Biases, which emphasize logging, visualization, and reproducibility for various ML frameworks, \texttt{deckard} enforces reproducibility by construction through its declarative experiments built on Facebook's hydra (Yadan 2019) configuration management tool. 
+In contrast to cloud-management software like Kubernetes---which is a general-purpose container orchestration platform---\texttt{deckard} abstracts away orchestration details and offers native support for parallel and distributed experimentation, tailored to ML workflows involving attack/defense cycles, model retraining, or optimisation. 
+While deckard integrates tightly with IBM's Adversarial Robustness Toolbox (Nicolae et al. 2018), the software is designed to be easily extensible to other attack frameworks. 
+The human- and machine-readable parameter configuration system allows researchers to declaratively define end-to-end pipelines that span data sampling, preprocessing, model training, attack generation, defense evaluation, multi-objective optimisation, and visualisation. 
+Tools like \texttt{ray} (Moritz et al. 2018), \texttt{optuna} (Akiba et al. 2019), or \texttt{nevergrad} (Bennet et al. 2021) offer components of this pipeline (\emph{e.g.}, hyperparameter search or configuration management), but lack unified support for adversarial ML, verification, or auditability at scale. 
+While \texttt{deckard} complements these existing tools, and in many cases can be integrated with them, its primary contribution is in automating and verifying adversarial ML experiments in a way that is both extensible and framework-agnostic.
 
 \hypertarget{usage}{%
 \section{Usage}\label{usage}}
 
-Various versions of this software have been used in several recently
-published and not-yet-published works by the author of this paper, all
-of which are available in the \texttt{examples} folder in the source
-code repository \url{https://github.com/simplymathematics/deckard}. One
-published work, now reproducible via the
-\texttt{examples/attack\_defence\_survey} folder, includes a large
-survey of attacks and defences against canonical datasets and models (C.
-Meyers, Löfstedt, and Elmroth 2023). Another work analysed the run-time
-requirements of attacks against a particular model before and after
-retraining against those attacks (Charles Meyers et al. 2024)
-(reproducible via \texttt{examples/retraining}). The next paper
-formalised a method for estimating the time-to-failure of a given model
-against a suite of attacks and introduce a metric that quantifies the
-ratio of attack and training cost (Meyers et al. 2023) (reproducible via
-\texttt{examples/survival\_heuristic}). Furthemore, a not yet published
-work uses this time-to-failure model as a mechanism for analysing the
-cost efficacy of various hardware choices in the context of adversarial
-attacks (reproducible via \texttt{examples/power}) (C. Meyers et al.
-2024). Another work exploits the tooling to train a custom model that is
-designed to run client-side by using compression algorithms to measure
-the distance between text (reproducible via
-\texttt{examples/compression}).
+Various versions of this software have been used in multiple published and forthcoming works by the author of \texttt{deckard}. 
+While this paper does not present new experimental results—its focus is the software system itself—all of these prior studies have been made fully reproducible using the example pipelines included in the \texttt{examples} directory of the source repository (\url{https://github.com/simplymathematics/deckard}
+). 
+One such published work, now reproducible via \texttt{examples/attack_defence_survey}, provides a large survey of attacks and defenses against canonical datasets and models (C. Meyers, Löfstedt, and Elmroth 2023). 
+A subsequent study examined the run-time requirements of various attacks before and after model retraining (reproducible via \texttt{examples/retraining}) (Charles Meyers et al. 2024). 
+Another work formalized a method for estimating a model’s time-to-failure under a suite of attacks and introduced a metric comparing attack cost to training cost (reproducible via \texttt{examples/survival_heuristic}) (Meyers et al. 2023). 
+Additionally, an unpublished study uses this time-to-failure framework to analyse the cost-efficiency of different hardware choices when facing adversarial workloads (reproducible via \texttt{examples/power}) (C. Meyers et al. 2024). 
+Finally, another project leveraged the tooling to train a client-side model using compression-based distance measures for text (reproducible via \texttt{examples/compression}).
 
 \hypertarget{experiment-management}{%
 \section{Experiment Management}\label{experiment-management}}
 
-Typically ML projects are composed of long and complex pipelines that
-are highly dependent on a number of parameters that must be configured
-by either the model builder or attacker. Due to the large scale and cost
-associated with training ML models, it is often necessary to tune a
-model using many indivudal model configurations (often called
-\emph{hyper-parameters}). To determine adversarial robustness, one of
-many benchmark datasets is first sampled, then preprocessed, sent to a
-model, with optional pre- and post-processing defences, and then scored
-according to some chosen metric which may include the performance
-against any number of adversarial attacks. Each stage in this example
-pipeline might include tens or hundreds of possible sets of
-hyper-parameters that must be exhaustively tested. Furthermore, this
-problem scales drastically as we include more and more stages in a
-pipeline since each additional stage introduces a new combinatorial
-layer of complexity, rapidly expanding the total number of potential
-configurations that must be evaluated for robustness and be reproducible
-for posterity. Not only does \texttt{deckard} provide a standard way to
-document and configure these hyper-parameters, it gives each experiment
-an auditable identifier.
+Typically ML projects are composed of long and complex pipelines that are highly dependent on a number of parameters that must be configured by either the model builder or attacker. Due to the large scale and cost associated with training ML models, it is often necessary to tune a model using many individual model configurations (often called \emph{hyper-parameters}). 
+
+To determine adversarial performance, one of
+many benchmark datasets is first sampled, then preprocessed, sent to a model, with optional pre- and post-processing defences, and then scored according to some chosen metric which may include the performance against any number of adversarial attacks. 
+Each stage in this example pipeline might include tens or hundreds of possible sets of hyper-parameters that must be exhaustively tested. 
+Furthermore, this problem scales drastically as we include more and more stages in a pipeline since each additional stage introduces a new combinatorial layer of complexity, rapidly expanding the total number of potential configurations that must be evaluated for robustness and be reproducible for posterity. 
+Not only does \texttt{deckard} provide a standard way to document and configure these hyper-parameters, it gives each experiment an auditable identifier.
 
 \hypertarget{reproducibility-and-auditability}{%
 \section{Reproducibility and
 Auditability}\label{reproducibility-and-auditability}}
 
-For ML, various regulatory and legal frameworks govern safety (The
-Parliament of the European Union 2024; {``{ISO} 26262-1:2011, Road
-Vehicles --- Functional Safety''} 2018; \emph{IEC 61508 Safety and
-Functional Safety} 2010; \emph{IEC 62304 Medical Device Software -
-Software Life Cycle Processes} 2006), privacy (The Parliament of the
-European Union 2024; European Parliament and Council of the European
-Union 2016; Legislature of the United States 1996, 1998) and/or
-transparency (The Parliament of the European Union 2024; The Legislature
-of California 2024). The software package presented here provides a
-machine- and human-readable format for creating reproducible and
-auditable experiments as required by various regulations. In addition,
-several examples connected to both published and not-yet-published work
-live in the \texttt{examples} folder in the repository, allowing for
-easy reproducibility of several extensive sets of experiments across
-several popular ML software frameworks. The \texttt{power} example
-provides a reproducible way to run a suite of adversarial tests using
-popular cloud-based platforms and the \texttt{retraining} and
-\texttt{survival\_heuristic} examples provide examples of both CPU and
-GPU-based parallelisation, respectively.
+For ML, various regulatory and legal frameworks govern safety (The Parliament of the European Union 2024; {``{ISO} 26262-1:2011, Road Vehicles --- Functional Safety''} 2018; \emph{IEC 61508 Safety and Functional Safety} 2010; \emph{IEC 62304 Medical Device Software - Software Life Cycle Processes} 2006), privacy (The Parliament of the European Union 2024; European Parliament and Council of the European Union 2016; Legislature of the United States 1996, 1998) and/or transparency (The Parliament of the European Union 2024; The Legislature of California 2024). 
+The software package presented here provides a machine- and human-readable format for creating reproducible and auditable experiments as required by various regulations. 
+In addition, several examples connected to both published and not-yet-published work live in the \texttt{examples} folder in the repository, allowing for easy reproducibility of several extensive sets of experiments across several popular ML software frameworks. The \texttt{power} example provides a reproducible way to run a suite of adversarial tests using popular cloud-based platforms and the \texttt{retraining} and \texttt{survival\_heuristic} examples provide examples of both CPU and GPU-based parallelisation, respectively.
 
 The \texttt{basics} subfolder provides a minimum working example for
-each of the supported ML frameworks: \texttt{tensorflow} (Abadi et al.
-2015), \texttt{pytorch} (Paszke et al. 1912), \texttt{scikit-learn}
-(Pedregosa et al. 2011), and \texttt{keras} (Chollet 2015). The basics
-folder also provides examples of various classes of adversarial
-examples: \emph{poisoning} attacks that change model behaviour by
-injecting data during training (Biggio, Nelson, and Laskov 2012),
-\emph{inference} attacks (Li and Zhang 2021) that attempt to reverse
-engineer properties of the training data, \emph{extraction} attacks that
-attempt to reverse engineer the model (Jagielski et al. 2020), and
-\emph{evasion} attacks that induce errors of classification during
-run-time (C. Meyers, Löfstedt, and Elmroth 2023). The parameters file
-for each experiment ensures that a given pipeline can be reproduced and
-the standardised format allows us to derive a hash value that is hard to
-forge but easy to verify. Not only does this hash serve as an identifier
-to track the state of an experiment, but also serves as a way to audit
-the parameters file for tampering. Likewise, by using \texttt{dvc} (DVC
-Authors 2023) to track any input or output files specified in the
-parameters file, the software associates each score file with a
-identifier that is easy to track and verify, but hard to
-forge---ensuring that forged or modified results are easy to spot in
-version-controlled experiment repository.
+each of the supported ML frameworks: \texttt{tensorflow} (Abadi et al. 2015), \texttt{pytorch} (Paszke et al. 1912), \texttt{scikit-learn} (Pedregosa et al. 2011), and \texttt{keras} (Chollet 2015). The basics folder also provides examples of various classes of adversarial examples: \emph{poisoning} attacks that change model behaviour by injecting data during training (Biggio, Nelson, and Laskov 2012), \emph{inference} attacks (Li and Zhang 2021) that attempt to reverse engineer properties of the training data, \emph{extraction} attacks that attempt to reverse engineer the model (Jagielski et al. 2020), and \emph{evasion} attacks that induce errors of classification during run-time (C. Meyers, Löfstedt, and Elmroth 2023). 
+The parameters file for each experiment ensures that a given pipeline can be reproduced and the standardised format allows us to derive a hash value that is hard to forge but easy to verify. Not only does this hash serve as an identifier to track the state of an experiment, but also serves as a way to audit the parameters file for tampering. 
+Likewise, by using \texttt{dvc} (DVC Authors 2023) to track any input or output files specified in the parameters file, the software associates each score file with a identifier that is easy to track and verify, but hard to forge---ensuring that forged or modified results are easy to spot in version-controlled experiment repository.
 
 \hypertarget{parallel-and-distributed-design}{%
 \section{Parallel and Distributed
 Design}\label{parallel-and-distributed-design}}
 
-Since ML projects can exploit specialized hardware such as multi-core
-processors or GPUs, and often rely on clusters of machines for
+Since ML projects can exploit specialized hardware such as multi-core processors or GPUs, and often rely on clusters of machines for
 large-scale data processing, it was necessary to enable parallel and
-distributed experiment execution and model optimization. By leveraging
-the \texttt{hydra} configuration framework, \texttt{deckard}
-automatically supports optimization libraries like \texttt{nevergrad}
-(Bennet et al. 2021), \texttt{Adaptive\ Experimentation} (A. Developers
-2025), and \texttt{optuna} (Akiba et al. 2019), making the software
-modular and extensible. Additionally, experiments can be managed using a
-variety of popular job schedulers, including \texttt{Ray} (Moritz et al.
-2018), \texttt{Redis\ Queue} (Stamps 2025), and \texttt{slurm} (Yoo,
-Jette, and Grondona 2003) for distributed jobs or \texttt{joblib} (Joblib
-Developers 2025) for jobs on a single machine.
+distributed experiment execution and model optimization. 
+By leveraging the \texttt{hydra} configuration framework, \texttt{deckard} automatically supports optimization libraries like \texttt{nevergrad} (Bennet et al. 2021), \texttt{Adaptive\ Experimentation} (Nevergrad Developers 2025), and \texttt{optuna} (Akiba et al. 2019), making the software modular and extensible. 
+Additionally, experiments can be managed using a variety of popular job schedulers, including \texttt{Ray} (Moritz et al. 2018), \texttt{Redis\ Queue} (Stamps 2025), and \texttt{slurm} (Yoo, Jette, and Grondona 2003) for distributed jobs or \texttt{joblib} (Joblib Developers 2025) for jobs on a single machine.
 
 By using a declarative design, a given set of experiments can be
-specified once and executed seamlessly across different back-ends without
-modification to the underlying codebase. This makes \texttt{deckard}
-both adaptable and scalable, suitable for use on personal laptops,
-multi-node servers, or large-scale, high-performance clusters. When
-configured appropriately, experiment batches can be parallelized,
-enabling massive parameter sweeps, ensemble evaluations, or adversarial
-robustness tests to be executed in parallel---reducing turnaround time
-while maintaining strong guarantees on reproducibility and auditability.
-The design of the presented software prioritizes clarity and
-maintainability by capturing each experimental configuration as a YAML
-artifact, making both successful and failed runs equally traceable and
-shareable. This approach transforms experiment tracking from an
+specified once and executed seamlessly across different back-ends without modification to the underlying codebase. 
+This makes \texttt{deckard} both adaptable and scalable, suitable for use on personal laptops, multi-node servers, or large-scale, high-performance clusters. 
+When configured appropriately, experiment batches can be parallelized, enabling massive parameter sweeps, ensemble evaluations, or adversarial tests to be executed in parallel---reducing turnaround time while maintaining strong guarantees on reproducibility and auditability.
+The design of the presented software prioritizes clarity and maintainability by capturing each experimental configuration as a YAML artifact, making both successful and failed runs equally traceable and shareable. 
+
+This approach transforms experiment tracking from an
 afterthought into a first-class component of the trustworthy ML
 workflow.
 
@@ -303,12 +196,9 @@ Programme under the Swedish Government's Strategic Research Initiative.
 \hypertarget{acknowledgements}{%
 \section{Acknowledgements}\label{acknowledgements}}
 
-The author would like to thank Aaron MacSween, Abel Souza, and Mohammad
-Saledghpour Reza for their guidance in software design principles. In
-particular, the author appreciates Mohammad's code and documentation
-regarding cloud-based and other Kubernetes deployments. The author would
-like to thanks his advisors, Erik Elmroth and Tommy Löfstedt for their
-research expertise, funding, and patience.
+The author would like to thank Aaron MacSween, Abel Souza, and Mohammad Saledghpour Reza for their guidance in software design principles. 
+In particular, the author appreciates Mohammad's code and documentationregarding cloud-based and other Kubernetes deployments. 
+The author would like to thanks his PhD advisors, Erik Elmroth and Tommy Löfstedt for their research expertise, funding, and patience.
 
 \hypertarget{references}{%
 \section*{References}\label{references}}
