@@ -25,23 +25,44 @@ output:
 
 # Summary 
 
-The software package presented, called `deckard`, is a modular software toolkit designed to streamline and standardize experimentation in machine learning (ML) with a particular focuse on the adversarial scenario. It provides a flexible, extensible framework for defining, executing, and analyzing end-to-end ML pipelines in the context of a malicious actor. As it is built on top of the Hydra configuration system, deckard supports declarative YAML-based configuration of data preprocessing, model training, and adversarial attack pipelines, enabling reproducible, framework-agnostic experimentation across diverse ML settings.
 
-In addition to configuration management, `deckard` includes a suite of utilities for distributed and parallel execution, automated hyperparameter optimisation, visualisation, and result aggregation. The tooling abstracts away much of the engineering overhead typically involved in adversarial ML research, allowing researchers to focus on algorithmic insights rather than implementation details. The presented software facilitates rigorous benchmarking by maintaining an auditable trace of configurations, random seeds, and intermediate outputs throughout the experimental lifecycle.
+The software package presented, called `deckard`, is a modular toolkit that streamlines and standardizes machine learning (ML) experimentation, with a particular emphasis on evaluating models under worst-case perturbations[@fgm]. 
+It offers a flexible, extensible framework for defining, running, and analysing end-to-end ML pipelines in settings where inputs may be manipulated by an attacker or corrupted by unexpected noise [@biggio_evasion_2013].
 
-The system is compatible with a variety of ML frameworks and several classes of adversarial attacks, making it a suitable backend for both large-scale automated testing and fine-grained empirical analysis. By providing a unified interface for experimental control, `deckard` accelerates the development and evaluation of robust models, and helps close the gap between research prototypes and verifiable, reproducible results.
+Built on the Hydra configuration system [@hydra], `deckard` supports declarative YAML-based configuration for data preprocessing, model training, and adversarial attack pipelines. 
+This makes it easy to run reproducible, framework-agnostic experiments across a wide range of ML domains.
+
+Beyond configuration management, `deckard` provides tools for distributed and parallel execution, automated hyperparameter optimization, visualization, and result aggregation. 
+By handling much of the engineering overhead common in adversarial ML research, it lets researchers focus on developing ideas rather than juggling infrastructure. 
+The system also ensures rigorous benchmarking by keeping an auditable record of configurations, seeds, and intermediate outputs throughout each experiment.
+
+Compatible with multiple ML frameworks and a variety of attack methods, `deckard` works both as a backend for large-scale automated testing and as a platform for detailed empirical analysis. 
+With its unified interface for experiment control, the toolkit accelerates the development of robust models and helps bridge the gap between exploratory research and reproducible, trustworthy results .
+
+To avoid any ambiguity about contributions, we clarify that `deckard` is a method and software system introduced in this work. 
+Although the implementation is publicly available on GitHub, the modular design, configuration-driven framework, and experimental methodology are original to this paper. 
+While the prior works outlined in the Usage Section can be fully reproduced with this software, this paper is the first to present the system as a cohesive method, fully specified, documented, and intended for broad reuse.
 
 
 # Statement of need
 
-While tools such as `mlflow` [@mlflow], Weights & Biases [@wandb], `optuna` [@optuna], and Kubernetes [@k8s] provide essential infrastructure for model tracking and experiment management, `deckard` occupies a different position in the ML ecosystem---focusing specifically on configurable, adversarially robust experimentation. 
+The software package presented, called `deckard`, is a modular toolkit that streamlines and standardizes machine learning (ML) experimentation, with a particular emphasis on evaluating models under worst-case perturbations [@fgm]. 
+It offers a flexible, extensible framework for defining, running, and analysing end-to-end ML pipelines in settings where inputs may be manipulated by an attacker or corrupted by unexpected noise [@biggio_evasion_2013].
 
-Unlike MLflow and Weights & Biases, which emphasize logging, visualization, and reproducibility for various ML frameworks, deckard enforces reproducibility by construction through its declarative, YAML-driven configuration system built on Facebook's hydra [@hydra] configuration management tool. 
-In contrast to cloud-management software like Kubernetes---which is a general-purpose container orchestration platform---`deckard` abstracts away orchestration details and offers native support for parallel and distributed experimentation, tailored to ML workflows involving attack/defense cycles, model retraining, or optimisation.
-While deckard integrates tightly with IBM's Adversarial Robustness Toolbox [@art], the software is designed to be easily extensible to other attack frameworks.
-The human- and machine-readable parameter configuration system allows researchers to declaratively define end-to-end pipelines that span data sampling, preprocessing, model training, attack generation, defense evaluation, multi-objective optimisation, and visualisation.
-Tools like `ray` [@ray], `optuna` [@optuna], or `nevergrad` [@nevergrad] offer components of this pipeline (_e.g._, hyperparameter search or configuration management), but lack unified support for adversarial ML, verification, or auditability at scale. 
-While `deckard` complements these existing tools, and in many cases can be integrated with them, its primary contribution is in automating and verifying adversarial ML experiments in a way that is both extensible and framework-agnostic.
+Built on the Hydra configuration system [@hydra], `deckard` supports declarative YAML-based configuration for data preprocessing, model training, and adversarial attack pipelines. 
+This makes it easy to run reproducible, framework-agnostic experiments across a wide range of ML domains.
+
+Beyond configuration management, `deckard` provides tools for distributed and parallel execution, automated hyperparameter optimization, visualization, and result aggregation. 
+By handling much of the engineering overhead common in adversarial ML research, it lets researchers focus on developing ideas rather than juggling infrastructure. 
+The system also ensures rigorous benchmarking by keeping an auditable record of configurations, seeds, and intermediate outputs throughout each experiment.
+
+Compatible with multiple ML frameworks and a variety of attack methods, `deckard` works both as a backend for large-scale automated testing and as a platform for detailed empirical analysis. 
+With its unified interface for experiment control, the toolkit accelerates the development of robust models and helps bridge the gap between exploratory research and reproducible, trustworthy results .
+
+To avoid any ambiguity about contributions, we clarify that `deckard` is a method and software system introduced in this work. 
+Although the implementation is publicly available on GitHub, the modular design, configuration-driven framework, and experimental methodology are original to this paper. 
+While the prior works outlined in the Usage Section can be fully reproduced with this software, this paper is the first to present the system as a cohesive method, fully specified, documented, and intended for broad reuse.
+
 
 # Usage
 Various versions of this software have been used in several recently published and not-yet-published works by the author of this paper, all of which are available in the `examples` folder in the source code repository [https://github.com/simplymathematics/deckard](https://github.com/simplymathematics/deckard).
