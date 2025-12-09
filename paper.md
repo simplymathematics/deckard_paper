@@ -26,8 +26,8 @@ output:
 # Summary 
 
 
-The software package presented, called `deckard`, is a modular toolkit that streamlines and standardizes machine learning (ML) experimentation, with a particular emphasis on evaluating models under worst-case perturbations[@fgm]. 
-It offers a flexible, extensible framework for defining, running, and analysing end-to-end ML pipelines in settings where inputs may be manipulated by an attacker or corrupted by unexpected noise [@biggio_evasion_2013].
+The software package presented, called `deckard`, is a modular toolkit that streamlines and standardizes machine learning (ML) experimentation, with a particular emphasis on evaluating models under worst-case scenarios [@fgm]. 
+It offers a flexible, extensible framework for defining, running, and analysing end-to-end ML pipelines in settings where inputs may be manipulated by an attacker or otherwise experience unexpected noise [@biggio_evasion_2013].
 
 Built on the Hydra configuration system [@hydra], `deckard` supports declarative YAML-based configuration for data preprocessing, model training, and adversarial attack pipelines. 
 This makes it easy to run reproducible, framework-agnostic experiments across a wide range of ML domains.
@@ -59,9 +59,9 @@ The system also ensures rigorous benchmarking by keeping an auditable record of 
 Compatible with multiple ML frameworks and a variety of attack methods, `deckard` works both as a backend for large-scale automated testing and as a platform for detailed empirical analysis. 
 With its unified interface for experiment control, the toolkit accelerates the development of robust models and helps bridge the gap between exploratory research and reproducible, trustworthy results .
 
-To avoid any ambiguity about contributions, we clarify that `deckard` is a method and software system introduced in this work. 
-Although the implementation is publicly available on GitHub, the modular design, configuration-driven framework, and experimental methodology are original to this paper. 
-While the prior works outlined in the Usage Section can be fully reproduced with this software, this paper is the first to present the system as a cohesive method, fully specified, documented, and intended for broad reuse.
+To avoid any ambiguity about contributions, we clarify that `deckard` is a software system introduced in this work. 
+Although the implementation is publicly available on GitHub, the modular design, configuration-driven framework, and presentation of the source code are unique to this paper. 
+While the prior works outlined in the next section can be fully reproduced with this software, this paper is the first to present the system as a cohesive method, fully specified, documented, and intended for broad reuse.
 
 
 # Usage
