@@ -40,7 +40,7 @@ Compatible with multiple ML frameworks and a variety of attack methods, `deckard
 With its unified interface for experiment control, the toolkit accelerates the development of robust models and helps bridge the gap between exploratory research and reproducible, trustworthy results .
 
 To avoid any ambiguity about contributions, we clarify that `deckard` is a method and software system introduced in this work. 
-Although the implementation is publicly available on GitHub, the modular design, configuration-driven framework, and experimental methodology are original to this paper. 
+Although the implementation is publicly available on GitHub, the modular design, configuration-driven framework, and the breadth of adversarial analysis is unique to this work. 
 While the prior works outlined in the Usage Section can be fully reproduced with this software, this paper is the first to present the system as a cohesive method, fully specified, documented, and intended for broad reuse.
 
 
